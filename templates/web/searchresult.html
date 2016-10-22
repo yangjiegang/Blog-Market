@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果页</title>
+    <style>
+        div{width: 80%; height: 20%; margin: 10px auto 10px; padding: 5px;}
+    </style>
+</head>
+<body>
+<h4><span style="color: red">{{ question }}</span>的搜索结果</h4>
+<span>总共找到{{ count }}条结果</span>
+{% if answer %}
+	{% for result in answer %}
+		<div>
+			<p><a href="{{ result.url }}">{{ result.title }}</a></p>
+			<p>{{ result.summary }}</p>
+		</div>
+	{% endfor %}
+{% else %}
+		<div>
+			<p>没有找到相关结果。</p>
+		</div>
+{% endif %}
+</body>
+</html>

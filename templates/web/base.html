@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon.ico">
+	<title>{% block title %}{% endblock %}</title>
+	<!-- custom styles for this template -->
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	{% block css %}{% endblock %}
+</head>
+<body>
+	{% block body %}{% endblock %}
+	<footer class="blog-footer">
+	  <p>Copyright @ yangjiegang Private 保留所有权利 by <a href="http://getbootstrap.com"> bootstrap</a></p>
+	  <p>
+		<a href="#">返回顶部</a>
+	  </p>
+	</footer>
+	{% load staticfiles %}
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
+	{% block js %}{% endblock %}
+</body>
+</html>

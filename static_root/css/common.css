@@ -1,0 +1,82 @@
+.pg-header{
+    height:40px;
+    background-color:blue;
+    margin-top: -20px;
+}
+.pg-body{
+    margin-top: 20px;
+    height: 800px;
+    width: 1330px;
+}
+.header_menu{
+    margin-top: 20px;
+    padding: 10px;
+}
+.clearfix{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.main{
+    position: relative;
+    height: 790px;
+    width: 1300px;
+}
+.item{
+    margin-top: 10px;
+    height: 700px;
+    width:700px;
+    float: left;
+}
+.part4{
+    background-color:yellow;
+}
+.hide{
+    display:none;
+}
+#shade{
+    height: 100%;
+    width: 100%;
+    background-color: azure;
+}
+.chat{
+    margin-top: 30px;
+    height: 700px;
+    width: 310px;
+    float: right;
+}
+.banner{
+    height: 20px;
+    width: 300px;
+    background-color: aquamarine;
+}
+.pool{
+    height: 500px;
+    width: 300px;
+    background-color: aliceblue;
+    margin-top: 10px;
+}
+.pooltxt{
+    height: 300px;
+    width: 300px;
+    background-color: aliceblue;
+}
+.msg{
+    height: 100px;
+    width: 300px;
+    margin-top: 10px;
+}
+.msgtxt{
+    float: left;
+    height: 95px;
+    width: 190px;
+}
+.msgbtn{
+    float:right;
+    height: 100px;
+    width: 100px;
+}
+.pg-footer{
+    margin-top: 20px;
+    width: 100%;
+}

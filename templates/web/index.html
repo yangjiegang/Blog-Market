@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>我的博客首页</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <!--[if lt IE 9]><script src="/static/js/html5.js"></script><![endif]-->
+</head>
+<body class="no-js">
+    <section class="main">
+        <header>
+            <div class="wrap">
+                <div class="logo">
+                    <a href="#">
+                        <img src="/static/upload/logo.png" width="341" height="68" alt="MY Journey | SIMPLE WAY to do it today">
+                    </a>
+                </div><!-- logo -->
+                <div class="social">
+                    <ul class="clearfix">
+                        <li><a class="social-facebook" href="#" title="facebook">facebook</a></li>
+                        <li><a class="social-twitter" href="#" title="twitter">twitter</a></li>
+                        <li><a class="social-googleplus" href="#" title="google plus">google plus</a></li>
+                    </ul>
+                </div><!-- social -->
+                <div class="separator"></div>
+            </div><!-- wrap -->
+        </header>
+        <section class="caption">
+            <div class="wrap">
+                <h1>据说在此页面停留3分钟将会有惊喜发生</h1>
+            </div><!-- wrap -->
+        </section><!-- caption -->
+        <section class="slider">
+            <div class="wrap">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="/static/upload/slide.jpg" width="940" height="360" alt="">
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <img src="/static/upload/slide.jpg" width="940" height="360" alt="">
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <img src="/static/upload/slide.jpg" width="940" height="360" alt="">
+                        </div><!-- swiper-slide -->
+                    </div>
+                    <div class="swiper-pagination-wrapper">
+                        <div class="swiper-pagination"></div>
+                    </div><!-- /swiper-pagination-wrapper -->
+                </div>
+            </div><!-- wrap -->
+        </section><!-- slider -->
+        <section class="features">
+            <div class="wrap">
+                <div class="features-columns clearfix">
+                    <div class="features-column">
+                        <span class="ico-bulb"></span>
+                        <h3><a href="http://yangjiegang.github.io">前端(跳转)</a></h3>
+                        <p>是本人利用GithubPage制作的一个博客，由纯粹的静态页面构成，主要用于记录已经掌握的前端技术等。</p>
+                    </div><!-- features-column -->
+                    <div class="features-column">
+                        <span class="ico-rocket"></span>
+                        <h3><a href="/web/market/">后端(商城)</a></h3>
+                        <p>是本人胡乱编造的一个微型商城结构，包含发布商品、商品列表浏览、商品详情查看、买卖双方聊天等基础的功能。</p>
+                    </div><!-- features-column -->
+                    <div class="features-column">
+                        <span class="ico-flag"></span>
+                        <h3><a href="blog/1/">新闻（测试）</a></h3>
+                        <p>暂时作为测试页面暂时作为测试页面\n\暂时作为测试页面暂时作为测试页面\n\暂时作为测试页面暂时作为测试页面</p>
+                    </div><!-- features-column -->
+                </div><!-- features-columns -->
+                <div class="separator"></div>
+            </div><!-- wrap -->
+        </section><!-- features -->
+        {% for ln in lastNews %}
+        <section class="textblock">
+            <div class="wrap">
+                <img src="/static/upload/image.jpg" width="320" height="280" alt="">
+                <div class="text-column">
+                    <h2>{{ln.title}}</h2>
+                    <p>{{ln.summary}}</p>
+                </div><!-- text-column -->
+                <div class="separator"></div>
+            </div><!-- wrap -->
+        </section><!-- textblock -->
+        {% endfor %}
+        {% for hn in hotNews %}
+        <section class="textblock textblock-last">
+            <div class="wrap">
+                <img src="/static/upload/image2.jpg" width="320" height="280" class="align-right" alt="">
+                <div class="text-column">
+                    <h2>{{hn.title}}</h2>
+                    <p>{{hn.summary}}</p>
+                </div><!-- text-column -->
+            </div><!-- wrap -->
+        </section><!-- textblock -->
+        {% endfor %}
+        <section class="twitter">
+            <div class="wrap">
+                <div class="twitter-ico"></div>
+                <div class="tab clearfix">
+                    <div class="box visible">
+                        <div class="twitter-post-wrapper">
+                            <div class="twitter-post-inside">
+                                <div class="twitter-post">留着以后改成推荐位置 <a href="#">https://yangjiegang.github.io/</a> 来Github玩玩</div>
+                                <p><a href="#">@yangjiegang</a> 正在更新中</p>
+                            </div><!-- twitter-post-inside -->
+                        </div><!-- twitter-post-wrapper -->
+                    </div><!-- box -->
+                    <div class="box">
+                        <div class="twitter-post-wrapper">
+                            <div class="twitter-post-inside">
+                                <div class="twitter-post">留着以后改成推荐位置 <a href="#">https://yangjiegang.github.io/</a> 来Github玩玩</div>
+                                <p><a href="#">@yangjiegang</a> 正在更新中</p>
+                            </div><!-- twitter-post-inside -->
+                        </div><!-- twitter-post-wrapper -->
+                    </div><!-- box -->
+                    <div class="box">
+                        <div class="twitter-post-wrapper">
+                            <div class="twitter-post-inside">
+                                <div class="twitter-post">留着以后改成推荐位置 <a href="#">https://yangjiegang.github.io/</a> 来Github玩玩</div>
+                                <p><a href="#">@yangjiegang</a> 正在更新中</p>
+                            </div><!-- twitter-post-inside -->
+                        </div><!-- twitter-post-wrapper -->
+                    </div><!-- box -->
+                    <div class="tabs-wrapper">
+                        <ul class="tabs">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div><!-- tab -->
+            </div><!-- wrap -->
+        </section><!-- twitter -->
+    </section><!-- main -->
+    <footer>
+        <div class="footer-image"></div>
+    </footer>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/library.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script src="/static/js/retina.js"></script>
+</body>
+</html>
