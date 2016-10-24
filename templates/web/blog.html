@@ -1,0 +1,116 @@
+{% extends 'web/base.html' %}
+{% block title %}新闻首页{% endblock %}
+{% block css %}{% endblock %}
+{% block body %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="javascript:;">我的博客</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <ul class="nav navbar-nav">
+		<li><a href="/web/">首页</a></li>
+		<li><a href="http://yangjiegang.github.io">前端</a></li>
+		<li><a href="/web/market/">后端</a></li>
+		<li class="active"><a href="javascript:;">新闻 <span class="sr-only">(current)</span></a></li>
+		<li><a href="/web/about/">关于本站</a></li>
+	  </ul>
+	  <form class="navbar-form navbar-left" role="search" method="post" action="/web/SearchNews/">
+		<div class="form-group">
+		  <input type="text" class="form-control" placeholder="搜索新闻" name="question"/>
+		</div>
+		<button type="submit" class="btn btn-default">搜索</button>
+	  </form>
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="/web/SignOut/">退出</a></li>
+		<li><a href="/web/SignIn/">登录</a></li>
+		<li><a href="javascript:;">欢迎：{{unm}}</a></li>
+	  </ul>
+	</div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <div class="blog-header">
+	<h1 class="blog-title">新闻页面测试页面</h1>
+	<p class="lead blog-description">暂时作为测试页面,点击新闻标题可以进入新闻详情页。</p>
+  </div>
+  <div class="row">
+	<div class="col-sm-8 blog-main">
+		{% for item in data %}
+		<div class="blog-post">
+			<div class="blog-post-title">
+				<h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+			</div>
+			<blockquote>
+				<div class="javascript:;">{{ item.summary }}</div>
+			</blockquote>
+			<div class="blog-post-meta">
+				<a href="javascript:;" onclick="favor(this,{{ item.id }});">赞：{{ item.favor_count }}  </a>
+				<a class='reply_count' href="javascript:;" onclick="reply(this,{{ item.id }});">  | 评论数：{{ item.reply_count }}</a>
+				<span>{{ item.create_date|date:"y-m-d h:i:s" }}</span>
+			</div>
+			<div id="reply" class="sidebar-module sidebar-module-inset hide">
+				<pre><code>
+					<div class="history">历史评论：</div>
+				</code></pre>
+				<div class="comment">
+					<input type="text" placeholder="Input Here: "/>
+					<input type="button" value="确认提交" onclick="submit(this,{{ item.id }});"/>
+				</div>
+			</div>
+
+		</div><!-- /.blog-post -->
+		{% endfor %}
+
+	<div>
+<!--select-->
+	</div>
+		<span>每页显示：</span>
+		<select id="slt" onchange="changepageitem(this)">
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<span> 条新闻</span>
+	</div>
+<!--select-->
+<!-- /.blog-main -->
+
+	<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+		<h2>博客留言板</h2>
+		<div class="sidebar-module sidebar-module-inset">
+			<div id="pool" class="pool"></div>
+		</div>
+		
+		<div id="shade" class="hide">loading...</div>
+		
+		<div class="input-group">
+			<input type="text" id="msgtxt" class="form-control" placeholder="Say sth...">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" onclick="sendmsg();"/>发送</button>
+			</span>
+		</div>
+  </div><!-- /.blog-sidebar -->
+  </div><!-- /.row -->
+	  <nav>
+		<ul class="pager">
+		  <li>{{ page }}</li>
+		</ul>
+	  </nav>	  
+</div><!-- /.container -->	 
+{% endblock %}
+{% block js %}
+<script>
+setInterval(getmsg,2000);
+</script>
+{% endblock %}
